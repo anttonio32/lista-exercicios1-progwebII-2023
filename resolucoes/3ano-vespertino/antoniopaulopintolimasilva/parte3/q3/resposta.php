@@ -21,22 +21,30 @@
 			<?php
 			
                 $metodo = $_SERVER["REQUEST_METHOD"];
-
+				$num=0;
+				echo "Início do intervalo: {$inicial}<br>";
+				echo "Fim do intervalo: {$final}<br>";
 				if($metodo == "POST"){
 
                     for($i = $inicial; $i <= $final; $i++){
-                        if($i % 2 == 0){
-                            echo "<li>$i</li>";
+                        
+						if($i % 2 == 0){
+                            
+							echo "<li>$i</li>";
+							$num ++;
                         }
-                    }
 
-					echo "Início do intervalo: {$inicial}<br>";
-					echo "Fim do intervalo: {$final}<br>";
-					echo "Quantidade de números pares: {$i}";
+						
+                    }
+					
+					echo "Quantidade de números pares: {$num}";
 
 				}
             
             ?>
+			<a href="formulario.php">
+				<button class="button">Voltar</button>
+			</a>
 			
 		</div>
 	</div>

@@ -1,3 +1,6 @@
+<?php
+	$num = $_POST["num"] ?? 1;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +16,22 @@
 	<div class="container">
 		<div class="box resposta">
 			<h2>Resposta</h2>
-			<p>A resposta será exibida aqui.</p>
-			<p class="alerta-vermelho">Mensagem de alerta aqui</p>
-			<p class="alerta-verde">Mensagem de alerta aqui</p>
-			<p class="alerta-amarelo">Mensagem de alerta aqui</p>
-            <a href="" class="link">Voltar</a>
+			<?php
+					for($i = 0; $i < $num; $i++){
+							for($j=0; $j < $i; $j++){
+								echo "*";
+							}
+						echo "*";
+						echo "<br>";
+					}
+				
+				
+			?>
+			<br>
+			<br>
+			<a href="formulario.php">
+				<button class="button">Voltar</button>
+			</a>
 		</div>
 	</div>
 </body>
