@@ -36,6 +36,9 @@
 		<div class="box resposta">
 			<h2>Resposta</h2>
 			<?php 
+			$metodo = $_SERVER["REQUEST_METHOD"];
+
+			if($metodo == "POST")
 			if($a < $b + $c && $b < $a + $c && $c < $b + $c){
 				if($a==$b && $b==$c && $a==$c)
 					echo "Os lados formam um triângulo equilátero";

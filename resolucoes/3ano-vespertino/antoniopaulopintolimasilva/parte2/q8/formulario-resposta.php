@@ -32,6 +32,9 @@
 		<div class="box resposta">
 			<h2>Resposta</h2>
 			<?php
+			$metodo = $_SERVER["REQUEST_METHOD"];
+
+			if($metodo == "POST")
 				if($imc < 18.5)
 					echo "Seu IMC é ".number_format($imc,2).", e você está, abaixo do peso";
 				elseif($imc >= 18.5 && $imc < 24.9)

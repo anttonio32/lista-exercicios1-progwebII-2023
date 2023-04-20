@@ -32,14 +32,28 @@
 			<?php
 				$tempo = $_POST["option"] ?? 1;
 
+				$metodo = $_SERVER["REQUEST_METHOD"];
+
+				if($metodo == "POST"){
 				switch($tempo){
-					case 1 
-					 ;
-
-					
-
-
-				}
+					case "1":
+						echo "Com o clima <strong>ensolarado</strong>, recomendamos ir ao <strong>Clube</strong>.";
+					break;
+					case "2":
+						echo "Com o clima <strong>ameno</strong>, recomendamos ir ao <strong>Parque</strong>.";
+					break;
+					case "3":
+						echo "Com o clima <strong>chuvoso</strong>, recomendamos ir ao <strong>Cinema</strong>.";
+					break;
+					case "4":
+						echo "Com o clima <strong>nublado</strong>, recomendamos ir ao <strong>Museu</strong>.";
+					break;
+					case "5":
+						echo "Com o clima <strong>tempestuoso</strong>, recomendamos ir ao <strong>Ficar em casa</strong>.";
+					break;
+					default:
+						echo "Operação invalida";
+				}}
 			
 			
 			?>

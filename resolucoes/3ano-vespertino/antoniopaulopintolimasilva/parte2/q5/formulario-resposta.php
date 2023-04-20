@@ -58,7 +58,9 @@
 		<div class="box resposta">
 			<h2>Resposta</h2>
 			<?php
+			$metodo = $_SERVER["REQUEST_METHOD"];
 
+			if($metodo == "POST")
 				if($soma %2 == 0 && $tipo == "par"){
 					echo "<p>O usuário escolheu <strong>{$tipo}</strong> e o número {$num}. O computador sorteou o número {$num_ale}, e a soma deles é {$soma}.<br><strong> {$soma} é par e o usuário venceu.</strong></p>";
 				}elseif($soma %2 != 0 && $tipo == "impar"){
