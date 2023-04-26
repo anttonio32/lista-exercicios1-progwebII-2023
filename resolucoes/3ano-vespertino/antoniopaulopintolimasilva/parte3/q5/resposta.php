@@ -1,3 +1,9 @@
+<?php
+	$divida = $_POST["divida"] ?? 5000;
+	$juros = $_POST["juros"] ?? 2;
+	$valorpago = $_POST["valor"] ?? 200;
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +19,16 @@
 	<div class="container">
 		<div class="box resposta">
 			<h2>Resposta</h2>
-			<p>A resposta será exibida aqui.</p>
-			<p class="alerta-vermelho">Mensagem de alerta aqui</p>
-			<p class="alerta-verde">Mensagem de alerta aqui</p>
-			<p class="alerta-amarelo">Mensagem de alerta aqui</p>
-            <a href="" class="link">Voltar</a>
+			<?php
+				$i = 0;
+
+				while( $divida > 0){
+					$divida -= $valorpago;
+					$divida += ($divida * ($juros/100));
+					$i++;
+				}
+			?>
+			<p>Serão necessários <?=$i?> meses para quitar a dívida.</p>
 		</div>
 	</div>
 </body>
